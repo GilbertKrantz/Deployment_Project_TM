@@ -12,8 +12,10 @@ class T5Model:
         return self.tokenizer.decode(text, skip_special_tokens=skip_special_tokens)
     
     def summarize(self, text, max_length=150):
+        # Append text with the summarization prefix (summarize:) and encode it
+        text = "summarize: " + text
         input_ids = self.encode_text(text)
-        summary_ids = self.model.generate(input_ids, max_length=max_length)
+        summary_ids = self.model.generate(input_ids)
         summary = self.decode_text(summary_ids[0])
         return summary
     
