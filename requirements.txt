@@ -8,3 +8,4 @@ matplotlib==3.9.2
 numpy==2.0.2
 pandas==2.2.3
 accelerate==1.1.1
+transformers==4.12.0
